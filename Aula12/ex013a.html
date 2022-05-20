@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Calculadora</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font: normal 18pt Arial;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        input#txtn1, input#txtn2, input#txtop {
+            font-size: 20pt;
+            width: 80px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        input#exec {
+            width: 100px;
+            height: 35px;
+        }
+
+        div.calc{
+            background-color: rgb(71, 226, 71);
+            border: 1px solid black;
+        }
+
+        div#res {
+            margin-top: 10px;
+            font-size: 20pt;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <h1>Calculadora</h1>
+        Digite um número:<input type="number" name="txtn1" id="txtn1"><br>
+        Digite outro número:<input type="number" name="txtn2" id="txtn2"><br>
+        Escolha a operação (+, -, *, /): <input type="text" name="txtop" id="txtop"><br>
+        <input type="button" value="Executar" onclick="verificar()" id="exec"><br>
+        Resultado:
+        <div id="res">
+
+        </div>
+    </div>
+
+    <script>
+        function verificar(){
+            var txtn1 = window.document.getElementById('txtn1')
+            var txtn2 = window.document.getElementById('txtn2')
+            var txtop = window.document.getElementById('txtop')
+            var n1 = Number(txtn1.value)
+            var n2 = Number(txtn2.value)
+            var op = String(txtop.value)
+            var res = window.document.getElementById('res')
+            var soma = n1 + n2
+            var sub = n1 - n2
+            var mult = n1 * n2
+            var divi = n1 / n2
+
+            if(op == '+') {
+                res.innerHTML = `${n1} ${op} ${n2} = ${soma}`
+            } else if (op == '-') {
+                res.innerHTML = `${n1} ${op} ${n2} = ${sub}`
+            } else if (op == '*') {
+                res.innerHTML = `${n1} ${op} ${n2} = ${mult}`
+            } else {
+                res.innerHTML = `${n1} ${op} ${n2} = ${divi}`
+            }
+
+
+        }
+    </script>
+
+
+</body>
+</html>
