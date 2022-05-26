@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de média</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: rgb(117, 117, 221);
+            font: normal 18pt Arial
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background-color: white;
+            width: 800px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        div#res {
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de média</h1>
+    </header>
+    <section>
+        <div>
+            <p>Primeira nota: <input type="number" name="n1" id="txtn1"></p>
+            <p>Segunda nota: <input type="number" name="n2" id="txtn2"></p>
+            <p>Terceira nota: <input type="number" name="n3" id="txtn3"></p>
+            <p>Quarta nota: <input type="number" name="n4" id="txtn4"></p>
+            <p><input type="button" value="Calcular média" onclick="calcular()"></p>
+        </div>
+        <div id="res">
+            Aguardando notas...
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Jacildo Furtado</p>
+    </footer>
+    <script>
+        function calcular() {
+            var txtn1 = document.getElementById('txtn1')
+            var txtn2 = document.getElementById('txtn2')
+            var txtn3 = document.getElementById('txtn3')
+            var txtn4 = document.getElementById('txtn4')
+            var res = document.getElementById('res')
+
+            if (txtn1.value.length == 0 || txtn2.value.length == 0 || txtn3.value.length == 0 || txtn4.value.length == 0) {
+                window.alert('[ERRO] Faltam números, verifique os dados e tente novamente!')
+            } else {
+                let n1 = Number(txtn1.value)
+                let n2 = Number(txtn2.value)
+                let n3 = Number(txtn3.value)
+                let n4 = Number(txtn4.value)
+                let med = (n1+n2+n3+n4)/4
+                res.innerHTML = `A sua média é ${med}`
+                
+            }
+        }
+    </script>
+</body>
+</html>
