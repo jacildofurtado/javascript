@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcuradora de Quadrado</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: aqua;
+            font: normal 18pt Arial
+        }
+
+        header {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        section {
+            background-color: white;
+            width: 800px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        div > h2 {
+            margin-bottom: 8px;
+        }
+
+        div#res {
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Quadrado</h1>
+    </header>
+    <section>
+        <div>
+            <h2>Insira 5 números abaixo para saber os seus quadrados;</h2>
+            <p>Insira um número: <input type="number" name="n1" id="txtn1"></p>
+            <p>Insira um número: <input type="number" name="n2" id="txtn2"></p>
+            <p>Insira um número: <input type="number" name="n3" id="txtn3"></p>
+            <p>Insira um número: <input type="number" name="n4" id="txtn4"></p>
+            <p>Insira um número: <input type="number" name="n5" id="txtn5"></p>
+            <input type="button" value="Calcular" onclick="calcular()">
+        </div>
+        <div id="res">
+            Aguardando números...
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Jacildo Furtado</p>
+    </footer>
+    <script>
+        function calcular() {
+            var txtn1 = document.getElementById('txtn1')
+            var txtn2 = document.getElementById('txtn2')
+            var txtn3 = document.getElementById('txtn3')
+            var txtn4 = document.getElementById('txtn4')
+            var txtn5 = document.getElementById('txtn5')
+            var res = document.getElementById('res')
+
+            if (txtn1.value.length == 0 || txtn2.value.length == 0 || txtn3.value.length == 0 || txtn4.value.length == 0 || txtn5.value.length == 0) {
+                window.alert('[ERRO] Faltam números, verifique e tente novamente!')
+            } else {
+                let n1 = Number(txtn1.value)
+                let n2 = Number(txtn2.value)
+                let n3 = Number(txtn3.value)
+                let n4 = Number(txtn4.value)
+                let n5 = Number(txtn5.value)
+                let quad1 = (n1)**2
+                let quad2 = (n2)**2
+                let quad3 = (n3)**2
+                let quad4 = (n4)**2
+                let quad5 = (n5)**2
+                
+            }
+        }
+    </script>
+</body>
+</html>
