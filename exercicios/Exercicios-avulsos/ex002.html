@@ -71,9 +71,10 @@
             var txtn4 = document.getElementById('txtn4')
             var txtn5 = document.getElementById('txtn5')
             var res = document.getElementById('res')
-
+            // Fazendo a verificação para o usuário não deixar nenhum número em branco.
             if (txtn1.value.length == 0 || txtn2.value.length == 0 || txtn3.value.length == 0 || txtn4.value.length == 0 || txtn5.value.length == 0) {
                 window.alert('[ERRO] Faltam números, verifique e tente novamente!')
+            //Caso a verifição seja false e não esteja faltando nenhum número então os comandos abaixo são executados
             } else {
                 let n1 = Number(txtn1.value)
                 let n2 = Number(txtn2.value)
@@ -85,7 +86,17 @@
                 let quad3 = (n3)**2
                 let quad4 = (n4)**2
                 let quad5 = (n5)**2
-                
+                res.innerHTML = `O quadrado de ${n1} é ${quad1} <br>
+                O quadrado de ${n2} é ${quad2} <br>
+                O quadrado de ${n3} é ${quad3} <br>
+                O quadrado de ${n4} é ${quad4} <br>
+                O quadrado de ${n5} é ${quad5} <br>`
+                // os comandos abaixo resetam o valor dos inputs dos números
+                document.getElementById('txtn1').value = ''
+                document.getElementById('txtn2').value = ''
+                document.getElementById('txtn3').value = ''
+                document.getElementById('txtn4').value = ''
+                document.getElementById('txtn5').value = ''
             }
         }
     </script>
