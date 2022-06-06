@@ -44,14 +44,32 @@
     </head>
     <section>
         <div>
-            Olá
+            <p>Digite 2 números: <input type="number" name="txtn" id="txtn"></p>
+            <input type="button" value="Verificar Maior" onclick="verificar()">
         </div>
-        <div>
-            Olá
+        <div id="res">
+            
         </div>
     </section>
     <footer>
         <p>&copy;Jacildo Furtado</p>
     </footer>
+    <script>
+
+
+        function verificar() {
+            numeros = document.getElementById('txtn').value;
+            numeros = numeros.split(',');
+            var maior = parseInt(numeros[0]);
+            var res = document.getElementById('res')
+            for(i=1; i<numeros.length; i++){
+                if(parseInt(numeros[i]) > maior){
+                    maior = parseInt(numeros[i]);
+                }
+            }
+
+            res.innerHTML = `O maior numero é ${maior}`
+        }
+    </script>
 </body>
 </html>
